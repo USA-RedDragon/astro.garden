@@ -1,6 +1,11 @@
 <div class="photo_container">
     <a href="/gallery/{{ .src }}">
         <div class="card">
+            {{- if .wip }}
+            <div class="wip">
+                <p>WIP</p>
+            </div>
+            {{- end }}
             <div class="more_info">
                 <p>
                     {{ .text }}<br />

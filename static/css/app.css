@@ -131,10 +131,10 @@ a
 }
 
 .more_info {
-  background-color: #feb66c;
+  background-color: #ff7b00;
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 80px;
   bottom: 0;
   z-index: 1;
   opacity: 0;
@@ -219,4 +219,12 @@ p
 .gallery_img {
   width: 100% !important;
   height: auto !important;
+}
+
+.wip {
+  background-color: #ff7b00;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 100;
 }
