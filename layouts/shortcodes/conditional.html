@@ -1,0 +1,5 @@
+{{ $a := .Get 0 }}
+{{ $b := .Get 1 }}
+{{ if eq $a $b }}
+{{ .Inner }}
+{{ end }}

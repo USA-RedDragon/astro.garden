@@ -216,7 +216,11 @@ p
   height: auto !important;
 }
 
-.gallery_img {
+.gallery_img_container {
+  position: relative;
+}
+
+.gallery_img_container img {
   width: 100% !important;
   height: auto !important;
 }
@@ -226,5 +230,18 @@ p
   color: white;
   position: absolute;
   top: 0;
+  z-index: 200;
+}
+
+.gallery_img_container .annotated {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.gallery_img_container:hover .annotated {
+  opacity: 1;
 }

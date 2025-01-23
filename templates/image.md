@@ -7,4 +7,4 @@ og_image = '/gallery/generated/social/${src}.png'
 +++
 ### $text
 
-[![${title}](/gallery/generated/halfres/${src}.webp "gallery_img")](/gallery/generated/fullres/${src}.png)
+{{<galleryimage "${title}" "${src}" "${annotated}" "${wip}">}}
