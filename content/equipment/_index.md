@@ -4,6 +4,7 @@ date = 2024-03-05T21:04:48-06:00
 +++
 
 ![My astrophotography equipment](gear.jpg "equipment_img")
+![My observatory at Starfront Remote Observatories](sfro.jpg "equipment_img")
 
 ## Optics
 
