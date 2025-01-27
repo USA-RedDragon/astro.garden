@@ -19,7 +19,7 @@
 
     {{ $base := .Site.BaseURL}}
 
-    {{ with (or .Params.og_image "/social-media-banner.png") -}}
+    {{ with (or .Params.og_image "social-media-banner.png") -}}
     <meta property="og:image" content="{{ $base }}{{ . }}" />
     <meta property="twitter:image" content="{{ $base }}{{ . }}" />
     {{- end }}
