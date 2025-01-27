@@ -17,7 +17,7 @@
     <meta property="twitter:url" content="{{ .Permalink }}" />
     <meta property="twitter:title" content="{{ or .Title .Site.Title }} | {{ .Site.Title }}" />
 
-    {{ $base := .Site..BaseURL}}
+    {{ $base := .Site.BaseURL}}
 
     {{ with (or .Params.og_image "/social-media-banner.png") -}}
     <meta property="og:image" content="{{ $base }}{{ . }}" />
