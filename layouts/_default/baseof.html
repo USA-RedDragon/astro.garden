@@ -17,9 +17,11 @@
     <meta property="twitter:url" content="{{ .Permalink }}" />
     <meta property="twitter:title" content="{{ or .Title .Site.Title }} | {{ .Site.Title }}" />
 
+    {{ $base := .Site..BaseURL}}
+
     {{ with (or .Params.og_image "/social-media-banner.png") -}}
-    <meta property="og:image" content="{{ or .Site.BaseURL .BaseURL }}{{ . }}" />
-    <meta property="twitter:image" content="{{ or .Site.BaseURL .BaseURL }}{{ . }}" />
+    <meta property="og:image" content="{{ $base }}{{ . }}" />
+    <meta property="twitter:image" content="{{ $base }}{{ . }}" />
     {{- end }}
 
     <!-- Favicons -->
