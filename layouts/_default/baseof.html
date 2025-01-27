@@ -18,8 +18,8 @@
     <meta property="twitter:title" content="{{ or .Title .Site.Title }} | {{ .Site.Title }}" />
 
     {{ with (or .Params.og_image "/social-media-banner.png") -}}
-    <meta property="og:image" content="{{ . }}" />
-    <meta property="twitter:image" content="{{ . }}" />
+    <meta property="og:image" content="https://astro.garden{{ . }}" />
+    <meta property="twitter:image" content="https://astro.garden{{ . }}" />
     {{- end }}
 
     <!-- Favicons -->
