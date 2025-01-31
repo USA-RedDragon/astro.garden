@@ -9,7 +9,7 @@ mkdir -p ./static/gallery
 mkdir -p .build-cache
 
 # renovate: datasource=github-releases depName=USA-RedDragon/astro.garden-images
-GALLERY_VERSION=40
+GALLERY_VERSION=41
 
 if [ ! -f .build-cache/gallery-${GALLERY_VERSION}.tar.gz ]; then
   curl -fSsL https://github.com/USA-RedDragon/astro.garden-images/releases/download/${GALLERY_VERSION}/gallery.tar.gz -o .build-cache/gallery-${GALLERY_VERSION}.tar.gz
