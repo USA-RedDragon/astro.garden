@@ -12,45 +12,42 @@ const particleTimerMin = 8;
 const drawMs = 100; // Rate at which to draw animated background
 const debug = false;
 
+const yellowStars = {
+  center: '#cfc54a',
+  outline: '#cfaf4a',
+  sizeMin: 2.9,
+  sizeMax: 1.5,
+  maxStarburstLength: 0.3,
+};
+
+const blueStars = {
+  center: '#9fb7ff',
+  outline: '#b3c6ff',
+  sizeMax: 2.4,
+  sizeMin: 1.0,
+  maxStarburstLength: 0.3,
+};
+
+const redStars = {
+  center: '#86232a',
+  outline: '#721e24',
+  sizeMax: 3.2,
+  sizeMin: 1.8,
+  maxStarburstLength: 0.3,
+};
+
 // 4:3:2
 // red:blue:yellow
 const starColors = [
-  {
-    center: '#cfc54a',
-    outline: '#cfaf4a',
-  },
-  {
-    center: '#cfc54a',
-    outline: '#cfaf4a',
-  },
-  {
-    center: '#86232a',
-    outline: '#721e24',
-  },
-  {
-    center: '#86232a',
-    outline: '#721e24',
-  },
-  {
-    center: '#86232a',
-    outline: '#721e24',
-  },
-  {
-    center: '#86232a',
-    outline: '#721e24',
-  },
-  {
-    center: '#9fb7ff',
-    outline: '#b3c6ff',
-  },
-  {
-    center: '#9fb7ff',
-    outline: '#b3c6ff',
-  },
-  {
-    center: '#9fb7ff',
-    outline: '#b3c6ff',
-  },
+  redStars,
+  redStars,
+  redStars,
+  redStars,
+  blueStars,
+  blueStars,
+  blueStars,
+  yellowStars,
+  yellowStars,
 ]
 
 function drawStar(context, point, alpha = 1) {
@@ -72,34 +69,12 @@ function drawStar(context, point, alpha = 1) {
   context.lineWidth = 1;
   context.strokeStyle = point.colors.outline;
   context.fillStyle = point.colors.center;
-  context.arc(point.x, point.y, 2, 0, 2 * Math.PI);
-  context.fill();
-  context.stroke();
+  const maxStarburstLen = Math.random() * point.colors.maxStarburstLength + point.size/2;
 
-  // Starburst
-  context.beginPath();
-  context.lineWidth = 1;
-  context.moveTo(point.x, point.y);
-  const maxStarburstLen = 2;
-  context.lineTo(
-    point.x + Math.floor(Math.random() * maxStarburstLen + 1),
-    point.y + Math.floor(Math.random() * maxStarburstLen + 1),
-  );
-  context.lineTo(
-    point.x - Math.floor(Math.random() * maxStarburstLen + 1),
-    point.y - Math.floor(Math.random() * maxStarburstLen + 1),
-  );
-  context.moveTo(point.x, point.y);
-  context.lineTo(
-    point.x + Math.floor(Math.random() * maxStarburstLen + 1),
-    point.y - Math.floor(Math.random() * maxStarburstLen + 1),
-  );
-  context.lineTo(
-    point.x - Math.floor(Math.random() * maxStarburstLen + 1),
-    point.y + Math.floor(Math.random() * maxStarburstLen + 1),
-  );
-  context.fill();
+  context.arc(point.x, point.y, point.size+maxStarburstLen, 0, 2 * Math.PI);
   context.stroke();
+  context.fill();
+  context.closePath();
 }
 
 function checkPoint(point) {
@@ -117,6 +92,7 @@ function fillParticles(canvas) {
     const point = {
       x: Math.floor(Math.floor(Math.random() * canvas.width)),
       y: Math.floor(Math.floor(Math.random() * canvas.height)),
+      size: Math.random() * (starColors[clrIdx].sizeMax - starColors[clrIdx].sizeMin) + starColors[clrIdx].sizeMin,
       timer: Math.floor(
         Math.random() * (particleTimerMax - particleTimerMin) +
         particleTimerMin +
