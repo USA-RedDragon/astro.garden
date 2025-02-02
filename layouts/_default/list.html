@@ -2,15 +2,8 @@
   <!-- THIS IS A HACK TO MAKE THE ROOT PAGE THE GALLERY -->
   {{ partial "page.html" . }}
   <div class="gallery">
-    <h2>Datasource: Myself</h2>
     <section class="photos">
     {{ range $.Site.Data.my }}
-      {{ partial "gallery_image.html" . }}
-    {{ end }}
-    </section>
-    <h2>Datasource: <a href="https://telescope.live" target="_blank" Telescope.live>Telescope.live</a></h2>
-    <section class="photos">
-    {{ range $.Site.Data.other }}
       {{ partial "gallery_image.html" . }}
     {{ end }}
     </section>
