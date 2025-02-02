@@ -2,13 +2,13 @@ var particles = [];
 
 const bgColor = "#060a17";
 const maxParticles = 240;
-const numGridX = 12;
+const numGridX = 20;
 const numGridY = 20;
 const particleAlphaFadeIn = 15;
 const particleAlphaFadeOut = 12;
 const particleDelayMax = 2;
 const particleTimerMax = 100;
-const particleTimerMin = 8;
+const particleTimerMin = 16;
 const drawMs = 100; // Rate at which to draw animated background
 const debug = false;
 
