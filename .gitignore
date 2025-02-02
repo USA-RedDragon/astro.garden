@@ -3,5 +3,4 @@ public/
 static/gallery/
 content/gallery/
 .build-cache/
-data/my.json
-data/other.json
+data/data.json

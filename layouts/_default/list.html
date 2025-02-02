@@ -3,7 +3,7 @@
   {{ partial "page.html" . }}
   <div class="gallery">
     <section class="photos">
-    {{ range $.Site.Data.my }}
+    {{ range $.Site.Data.data }}
       {{ partial "gallery_image.html" . }}
     {{ end }}
     </section>
