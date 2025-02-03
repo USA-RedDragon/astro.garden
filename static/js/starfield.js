@@ -1,7 +1,7 @@
 var particles = [];
 
 const bgColor = "#060a17";
-const maxParticles = 240;
+const maxParticles = 120;
 const numGridX = 20;
 const numGridY = 20;
 const particleAlphaFadeIn = 15;
