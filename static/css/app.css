@@ -5,15 +5,35 @@
   color: #c3c3c3;
 }
 
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+}
+
+.header .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header .title {
+  justify-content: center;
+}
+
 .header a:has(h1) {
   color: inherit;
   text-decoration: inherit;
 }
 
 #main {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a
@@ -26,11 +46,16 @@ a
   color: #42b983;
 }
 
+#nav {
+  margin-left: 2em;
+}
+
 #nav h2 a
 {
   font-weight: 700;
   text-decoration: none;
   color: #c3c3c3;
+  margin-left: 1em;
 }
 
 .photos {

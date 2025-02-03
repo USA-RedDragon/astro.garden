@@ -1,20 +1,21 @@
 {{ define "header" }}
 <div class="header">
-  <a href="/">
-    <h1>{{ .Site.Title }}</h1>
-    <img src="/png/logo.png" alt="Logo" width="128" height="128" style="margin: -20px;">
-  </a>
-  <h6> Astrophotography by <a target="_blank" href="https://jacob.mcswain.dev">Jacob McSwain</a></h6>
-  <div id="nav">
-    <h2>
-      {{ $isActive := or (eq .Kind "home") (eq .Section "gallery") }}
-      {{ $activeLinkClasses := "router-link-active router-link-exact-active" }}
-      <a href="/" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}" aria-current="page">Gallery</a>&nbsp;|
-      {{ $isActive := eq .Section "about" }}
-      <a href="/about" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">About</a>&nbsp;|
-      {{ $isActive := eq .Section "equipment" }}
-      <a href="/equipment" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">Equipment</a>&nbsp;
-    </h2>
+  <div class="row">
+    <a class="row" href="/">
+      <img src="/png/logo.png" alt="Logo" width="64" height="64">
+      <h1>&nbsp;&nbsp;{{ .Site.Title }}</h1>
+    </a>
+    <div id="nav">
+      <h2>
+        {{ $isActive := or (eq .Kind "home") (eq .Section "gallery") }}
+        {{ $activeLinkClasses := "router-link-active router-link-exact-active" }}
+        <a href="/" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}" aria-current="page">Gallery</a>
+        {{ $isActive := eq .Section "about" }}
+        <a href="/about" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">About</a>
+        {{ $isActive := eq .Section "equipment" }}
+        <a href="/equipment" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">Equipment</a>
+      </h2>
+    </div>
   </div>
 </div>
 {{ end }}
