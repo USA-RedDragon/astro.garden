@@ -66,6 +66,8 @@
       <div id="main">
         {{ block "main" . }}{{ end }}
       </div>
+      {{ partial "footer.html" . }}
+      {{ block "footer" . }}{{ end }}
     </div>
   </body>
 </html>
