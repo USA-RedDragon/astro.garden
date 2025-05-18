@@ -1,5 +1,3 @@
-# Astro Garden Hugo Site
+# Astro Garden
 
-This site isn't quite live yet, but it will be soon.
-
-<https://astro-garden.netlify.app/>
+Astrophotography - <https://astro.garden/>
