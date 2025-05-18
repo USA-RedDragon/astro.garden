@@ -14,6 +14,8 @@
         <a href="/about" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">About</a>
         {{ $isActive := eq .Section "equipment" }}
         <a href="/equipment" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">Equipment</a>
+        {{ $isActive := eq .Section "wheresmyscope" }}
+        <a href="/wheresmyscope" class="{{- if $isActive }}{{$activeLinkClasses}}{{end}}">Where's My Scope?</a>
       </h2>
     </div>
   </div>
