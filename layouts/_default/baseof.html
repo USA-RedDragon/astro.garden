@@ -40,13 +40,21 @@
     <meta name="msapplication-TileImage" content="/favicon//mstile-144x144.png">
     <meta name="theme-color" content="#101010">
 
-    <!-- Starfield -->
-    <script type="module" src="/js/starfield.js"></script>
-    <link rel="stylesheet" href="/css/starfield.css">
+    {{ with resources.Get "css/app.css" }}
+      <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
 
-    <link rel="stylesheet" href="/css/app.css">
-    <script type="module" src="/js/lazyload.js"></script>
-    <script type="module" src="/js/liveimage.js"></script>
+    {{ with resources.Get "js/lazyload.js" }}
+      <script type="module">{{ .Content | safeJS }}</script>
+    {{ end }}
+
+    {{ with resources.Get "js/liveimage.js" }}
+      <script type="module">{{ .Content | safeJS }}</script>
+    {{ end }}
+
+    {{ with resources.Get "js/starfield.js" }}
+      <script type="module">{{ .Content | safeJS }}</script>
+    {{ end }}
 
     <title>
     {{if eq .Title "404 Page not found"}}

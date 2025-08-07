@@ -1,12 +1,22 @@
-#app
-{
-  font-family: Avenir,Helvetica,Arial,sans-serif;
-  text-align: center;
-  color: #c3c3c3;
-}
-
 body {
   margin: 0;
+  background-color: #060a17;
+  color: #c3c3c3;
+  font-family: Avenir,Helvetica,Arial,sans-serif;
+  text-align: center;
+}
+
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 .header {
@@ -19,10 +29,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.header .title {
-  justify-content: center;
 }
 
 .header a:has(h1) {
