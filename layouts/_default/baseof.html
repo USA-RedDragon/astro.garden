@@ -57,7 +57,7 @@
     {{ end }}
 
     {{ range $.Site.Data.data }}
-      <link rel="preload" fetchpriority="high" as="image" href="/gallery/generated/halfres/{{.src}}.webp" type="image/webp" />
+      <link rel="preload" fetchpriority="low" as="image" href="/gallery/generated/halfres/{{.src}}.webp" type="image/webp" />
     {{ end }}
 
     <title>
