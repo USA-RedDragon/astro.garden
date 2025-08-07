@@ -56,6 +56,10 @@
       <script type="module">{{ .Content | safeJS }}</script>
     {{ end }}
 
+    {{ range $.Site.Data.data }}
+      <link rel="preload" fetchpriority="high" as="image" href="/gallery/generated/halfres/{{.src}}.webp" type="image/webp" />
+    {{ end }}
+
     <title>
     {{if eq .Title "404 Page not found"}}
       Lost in space...
