@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
     - name: Read .hugoversion
       id: hugo-version
@@ -27,7 +27,7 @@ jobs:
         echo "HUGO_VERSION=${hv#v*}" >> $GITHUB_OUTPUT
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v3
+      uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
       with:
         hugo-version: '${{ steps.hugo-version.outputs.HUGO_VERSION }}'
         extended: true
@@ -36,7 +36,7 @@ jobs:
       run: ./build.sh
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4
+      uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a # v4
       with:
         role-to-assume: arn:aws:iam::803205869942:role/github-actions-astro-garden
         aws-region: us-east-1
