@@ -3,11 +3,16 @@
     "extends": [
         "local>USA-RedDragon/renovate-configs"
     ],
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": ["^\\.hugoversion$"], 
-            "matchStrings": ["^(?<currentValue>.*)$"], 
-            "depNameTemplate": "gohugoio/hugo", 
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/^\\.hugoversion$/"
+            ],
+            "matchStrings": [
+                "^(?<currentValue>.*)$"
+            ],
+            "depNameTemplate": "gohugoio/hugo",
             "datasourceTemplate": "github-releases"
         }
     ]
