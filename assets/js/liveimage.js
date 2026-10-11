@@ -1,3 +1,26 @@
+function isSurveyImage(imageURL) {
+  try {
+    return new URL(imageURL).pathname.includes("/hips2fits");
+  } catch (e) {
+    return false;
+  }
+}
+
+function setCredit(survey) {
+  const credit = document.querySelector("#liveimage_credit");
+  if (!credit) {
+    return;
+  }
+  if (!survey) {
+    credit.textContent = "Image from my telescope: its newest accepted sub of this target.";
+    return;
+  }
+  const link = document.createElement("a");
+  link.href = "https://alasky.cds.unistra.fr/hips-image-services/hips2fits";
+  link.textContent = "hips2fits";
+  credit.replaceChildren("Survey image provided by ", link, ", a service provided by CDS.");
+}
+
 function updateLiveImage() {
   fetch("https://wheresmyscope.mcswain.dev")
     .then((response) => {
@@ -23,6 +46,7 @@ function updateLiveImage() {
 
         image.alt = data.target;
         title.innerText = data.target;
+        setCredit(isSurveyImage(data.image_url));
         placeholder.classList.add("hidden");
         errorMessage.classList.add("hidden");
         container.classList.remove("hidden");
